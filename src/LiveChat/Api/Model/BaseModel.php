@@ -113,12 +113,12 @@ abstract class BaseModel
                 if(is_array($value)){
                     foreach($value as $v){
                         $return != '' ? $return .= '&' : '';
-                        $return .= $key . '[]=' . $v;
+                        $return .= $key . '[]=' . urlencode($v);
                     }
                 }else{
                     if(trim($value) != '' ){
                         $return != '' ? $return .= '&' : '';
-                        $return .= $key . '=' . $value;
+                        $return .= $key . '=' . urlencode($value);
                     }
                 }
             }
